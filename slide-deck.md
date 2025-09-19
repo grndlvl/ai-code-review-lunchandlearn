@@ -149,13 +149,48 @@ Agent iterates until all criteria are satisfied.
 
 # Demo Time!
 
-ENTER SAMPLE PROMPT HERE.
+```
+You are a Drupal expert working on a Drupal 11 site.
+
+Task:
+Write code so that all node titles are capitalized.
+
+Process:
+1. Generate an initial Drupal-appropriate implementation (using hook_preprocess_node).
+2. Check against the acceptance criterion: ALL TITLES ARE CAPITALIZED.
+3. If the code does not meet this criterion, refine and try again.
+4. Repeat until the acceptance criterion is satisfied.
+
+Acceptance Criterion:
+- ✅ All node titles in rendered output on the site are capitalized.
+
+At the end, output the final refined Drupal 11 code that meets the criterion.
+```
 
 ---
 
-// Discuss Agents.md
-// Discuss besure to only use on a clean branch. If you have changes commit them. Check in changes that are correct before running/re-running the agent.
-// Discuss limitations: context window, flaky tests, etc.
+# AGENTS.md
+
+A README.md file for **coding agents**.
+
+**Purpose**
+- Clear, predictable place for agent instructions
+- Precise guidance: build steps, tests, conventions, acceptance criteria
+- Keeps human-facing docs clean while giving agents what they need
+
+---
+
+# Additional Tips
+
+**<span style="color:red;">ALWAYS RUN ON A CLEAN BRANCH!!!</span>**
+- Commit any changes before running the agent to prevent loss of work
+- Sometimes the machine thinks it knows better or it tries to clean up and messes up your work
+- Commit changes incrementally and often as it can destroy it's own work
+
+**Be pendantic**
+- Small, precise tasks work best
+- If you want a specific approach, say so
+- Give it as much context as you can including Class names and methods
 
 ---
 
