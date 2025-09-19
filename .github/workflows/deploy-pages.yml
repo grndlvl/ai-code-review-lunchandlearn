@@ -21,6 +21,8 @@ jobs:
         uses: docker://marpteam/marp-cli:v4.2.3
         with:
           args: slide-deck.md --html --output index.html
+        env:
+          MARP_USER: root:root
 
       - name: Prepare deploy directory
         run: |
