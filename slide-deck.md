@@ -11,7 +11,11 @@ paginate: true
 ## Practical Wins, Real Limits
 
 *Lunch & Learn*
-Jonathan · grndlvl
+
+**Jonathan**  
+CTO · [Zivtech](https://www.zivtech.com) · [@grndlvl](https://www.grndlvl.com)
+
+![bg right width:400px](./images/qrcode_grndlvl.github.io.png)
 
 ---
 
@@ -32,6 +36,8 @@ I wanted to cut down bottlenecks in PR review and test AI in real workflows.
 ---
 
 # Why Code Review Matters
+
+![bg left width:500px](./images/code-review-scale.png)
 
 ✅ Ensures quality and maintainability
 ✅ Catches bugs early
@@ -72,6 +78,8 @@ Catches low hanging fruit before it gets assigned to a review.
 ---
 
 # Benefits vs. Limitations
+
+![bg left width:500px](./images/benefit-vs-limitations.png)
 
 **Benefits**
 - Speed
@@ -119,6 +127,44 @@ This leads us to **agentic coding**.
 ---
 
 # Beyond Review: Agentic Coding
+
+
+![crush coding agent](./images/crush-code-agent.gif)
+
+---
+
+# Coding Agents
+
+<div style="display: flex; justify-content: space-between;">
+
+<div>
+
+- [Codex CLI](https://openai.com/research/codex)  
+- [Qwen](https://huggingface.co/Qwen)  
+- [Gemini](https://deepmind.google/technologies/gemini/)  
+- [Crush](https://github.com/crush-cli/crush)  
+
+</div>
+
+<div>
+
+- [OpenCode](https://github.com/opencode-ai/opencode)  
+- [GitHub Copilot](https://github.com/features/copilot)  
+- [Zencoder AI](https://zencoder.ai)  
+- [Cursor](https://cursor.sh)  
+
+</div>
+
+<div>
+
+- [Amazon Q Developer](https://aws.amazon.com/q/developer/)  
+- [CodeGPT](https://codegpt.co/)  
+- [Tabnine](https://www.tabnine.com/)  
+- [Codeium](https://codeium.com/)  
+
+</div>
+
+</div>
 
 ---
 
