@@ -7,12 +7,12 @@ class:
 paginate: true
 ---
 
-# AI in the Code Review Pipeline
+# AI in the PR Pipeline: From Review to Coding Agents
 ## Practical Wins, Real Limits
 
 *Lunch & Learn*
 
-**Jonathan**  
+**Jonathan**
 CTO · [Zivtech](https://www.zivtech.com) · [@grndlvl](https://www.grndlvl.com)
 
 ![bg right width:400px](./images/qrcode_grndlvl.github.io.png)
@@ -139,28 +139,28 @@ This leads us to **agentic coding**.
 
 <div>
 
-- [Codex CLI](https://openai.com/research/codex)  
-- [Qwen](https://huggingface.co/Qwen)  
-- [Gemini](https://deepmind.google/technologies/gemini/)  
-- [Crush](https://github.com/crush-cli/crush)  
+- [Codex CLI](https://openai.com/research/codex)
+- [Qwen](https://huggingface.co/Qwen)
+- [Gemini](https://deepmind.google/technologies/gemini/)
+- [Crush](https://github.com/crush-cli/crush)
 
 </div>
 
 <div>
 
-- [OpenCode](https://github.com/opencode-ai/opencode)  
-- [GitHub Copilot](https://github.com/features/copilot)  
-- [Zencoder AI](https://zencoder.ai)  
-- [Cursor](https://cursor.sh)  
+- [OpenCode](https://github.com/opencode-ai/opencode)
+- [GitHub Copilot](https://github.com/features/copilot)
+- [Zencoder AI](https://zencoder.ai)
+- [Cursor](https://cursor.sh)
 
 </div>
 
 <div>
 
-- [Amazon Q Developer](https://aws.amazon.com/q/developer/)  
-- [CodeGPT](https://codegpt.co/)  
-- [Tabnine](https://www.tabnine.com/)  
-- [Codeium](https://codeium.com/)  
+- [Amazon Q Developer](https://aws.amazon.com/q/developer/)
+- [CodeGPT](https://codegpt.co/)
+- [Tabnine](https://www.tabnine.com/)
+- [Codeium](https://codeium.com/)
 
 </div>
 
@@ -196,21 +196,41 @@ Agent iterates until all criteria are satisfied.
 # Demo Time!
 
 ```
-You are a Drupal expert working on a Drupal 11 site.
+**Role:**
+You are an expert Drupal 11 developer with deep knowledge of Symfony, dependency
+injection, Drupal’s plugin system, and REST APIs. You write clean,
+production-ready code following Drupal coding standards.
 
-Task:
-Write code so that all node titles are capitalized.
+**Action:**
+Generate a complete custom REST Resource module in Drupal 11 that exposes a JSON
+endpoint for featured articles. Provide all required files and explain installation steps.
 
-Process:
-1. Generate an initial Drupal-appropriate implementation (using hook_preprocess_node).
-2. Check against the acceptance criterion: ALL TITLES ARE CAPITALIZED.
-3. If the code does not meet this criterion, refine and try again.
-4. Repeat until the acceptance criterion is satisfied.
+**Context:**
+- The module should be named `featured_articles_api`.
+- It must define a REST resource available at `/api/featured-articles`.
+- It should return the latest 5 published nodes of type `article`.
+- Each JSON item should include:
+  - `title` (node title)
+  - `author` (username of node author)
+  - `url` (absolute URL of the node)
+- Use Drupal’s `EntityTypeManagerInterface` and dependency injection.
+- Follow Drupal 11 best practices (YAML, PSR-4 autoloading, annotation for REST resource).
+- Assume the Drupal core REST module is enabled.
+- The REST resource must use **cookie authentication** for access (not basic auth or OAuth).
+- **All Drush and PHP commands must be executed inside the Lando environment**, e.g.:
+  - `lando drush en featured_articles_api`
+  - `lando drush cr`
+  - `lando drush rest:list`
+- Place all module files inside this directory:
+web/modules/custom/featured_articles_api/
 
-Acceptance Criterion:
-- ✅ All node titles in rendered output on the site are capitalized.
+**Expectation:**
+- Provide the code for the module, placed in the directory above.
+- Show example JSON output of the endpoint.
+- Explain how to configure the REST resource to use **cookie authentication** (e.g., via REST UI or config export).
+- Give clear instructions for enabling, configuring, and testing the resource using **`lando drush`** commands.
+- Do not generate extra files or directories outside of `web/modules/custom/featured_articles_api/`.
 
-At the end, output the final refined Drupal 11 code that meets the criterion.
 ```
 
 ---
@@ -223,6 +243,8 @@ A README.md file for **coding agents**.
 - Clear, predictable place for agent instructions
 - Precise guidance: build steps, tests, conventions, acceptance criteria
 - Keeps human-facing docs clean while giving agents what they need
+
+Example for Drupal 11: https://gist.github.com/grndlvl/37bc7e909360cbb789a8d7f23c0d2100
 
 ---
 
